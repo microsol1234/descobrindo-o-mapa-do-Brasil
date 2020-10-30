@@ -1,37 +1,61 @@
-## Welcome to GitHub Pages
+let img;
+function preload(){
+  img = loadImage("a.png")
+}
+x=100
+var tela=0
+var xmenu=125
+var ymenu1=125
+var ymenu2=185
 
-You can use the [editor on GitHub](https://github.com/microsol1234/descobrindo-o-mapa-do-Brasil/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+largura=200
+altura=50
+function setup() {
+  createCanvas(400, 400);
+}
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+function draw() {
+  textStyle(NORMAL)
+  background(220);
+  if(tela==0){
+  textSize(26)
+  //iniciar do jogo
+  if(mouseX>xmenu && mouseX<xmenu+largura && mouseY>ymenu1 && mouseY<ymenu1+altura){
+  stroke(200)
+  fill(20)
+  rect(xmenu,ymenu1,largura,altura,155,155,);
+    if(mouseIsPressed){
+      tela=1
+      
+    }
+   
+  }
+  fill(255,0,0);
+  noStroke()
+  text("Iniciar",165,160)
+  
+  //informações do jogo 
+  if(mouseX>xmenu && mouseX<xmenu+largura && mouseY>ymenu2 && mouseY<ymenu2+altura){
+  stroke(200)
+  fill(20)
+  rect(xmenu,ymenu2,largura,altura,155,155)
+    if(mouseIsPressed){
+      tela=2
+    }
+  }
+  fill(255,0,0)
+  noStroke()
+  text("Informações",165,220)
+  }
+  if(tela==1){
+    image(img,0,0,400,400)
+  }
+  if(tela==2){
+    textStyle(NORMAL)
+    textSize(26)
+    text("o jogo requer conhecimento do territorio brasileiro , onde o aluno precisa conhecer o nome dos estados e regiões do país",0,0,400,400)
+  }
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/microsol1234/descobrindo-o-mapa-do-Brasil/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+ 
+ 
+}
